@@ -8,11 +8,11 @@ const getPosts = () => {
 const createPost = (post, callBack) => {
   setTimeout(() => {
     posts.push(post);
-    getPosts();
+    callBack();
   }, 3000);
 };
-createPost("About work");
-createPost("About hooka");
+createPost("About work", getPosts);
+createPost("About hooka", getPosts);
 
 // Promise :
 function fetchData() {
